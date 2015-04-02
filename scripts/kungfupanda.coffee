@@ -32,7 +32,7 @@ module.exports = (robot) ->
  cooltriggers = [
   "awesome",
   "attractive",
-  "(special|cool|incredible|incroyable)"
+  "(kool|special|cool|incredible|incroyable)"
  ]
 
  coolreplies = [
@@ -48,7 +48,7 @@ module.exports = (robot) ->
     if text.match(/awesome/i) or text.match(/attractive/i)
        msg.send msg.random coolreplies
     else if (msg.message.user.name in ['bhan'])
-       msg.reply "*IKR?!*" 
+       msg.send "/me nodds emphatically in agreement" 
 
  
  robot.hear /panda/i, (msg) ->
