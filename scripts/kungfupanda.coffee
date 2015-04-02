@@ -1,11 +1,13 @@
 # Description:
-#   Example scripts for you to examine and try out.
+#   scripts for pobot.
 #
 module.exports = (robot) ->
 
  robot.respond /(who's|who is) your (boss|master)/i, (msg) ->
-  msg.send "The one who has reached inner peace."
-
+  if (msg.message.user.name in ['bhan'])
+       msg.reply "...silence is golden..."
+  else
+       msg.reply "Find your inner peace and I will tell you."
 
 # food 
  foodreplies = [
@@ -46,7 +48,7 @@ module.exports = (robot) ->
     if text.match(/awesome/i) or text.match(/attractive/i)
        msg.send msg.random coolreplies
     else if (msg.message.user.name in ['bhan'])
-       msg.reply "IKR?!" 
+       msg.reply "*IKR?!*" 
 
  
  robot.hear /panda/i, (msg) ->
