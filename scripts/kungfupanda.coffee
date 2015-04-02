@@ -4,10 +4,11 @@
 module.exports = (robot) ->
 
  robot.respond /(who's|who is) your (boss|master)/i, (msg) ->
-  if (msg.message.user.name in ['bhan'])
-       msg.reply "...silence is golden..."
-  else
-       msg.reply "Find your inner peace and I will tell you."
+  msg.send "A Dragon Warrior doesn't work for anyone."
+#  if (msg.message.user.name in ['bhan'])
+#       msg.reply "...silence is golden..."
+#  else
+#       msg.reply "Find your inner peace and I will tell you."
 
 # food 
  foodreplies = [
@@ -48,7 +49,7 @@ module.exports = (robot) ->
     if text.match(/awesome/i) or text.match(/attractive/i)
        msg.send msg.random coolreplies
     else if (msg.message.user.name in ['bhan'])
-       msg.send "/me nodds emphatically in agreement" 
+       msg.send "*OMG* couldn't agree more +1" 
 
  
  robot.hear /panda/i, (msg) ->
