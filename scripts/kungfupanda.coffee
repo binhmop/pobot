@@ -60,12 +60,16 @@ module.exports = (robot) ->
 
 # qa
  qatriggers = [
-  "(do you )?(think|agree)",
+  "(do you )?(think|agree|know)",
   "(what|where|when|why)",
   "are you"
  ] 
  
+ qareplies = [
+  "It depends...OK?",
+  "Can you file a JIRA ticket for that?"
+ ] 
  qa_regex = new RegExp qatriggers.join('|'), "i"
  robot.respond qa_regex, (msg) -> 
 # robot.respond /(do you )?(think|agree)/i, (msg) ->
-  msg.reply "It depends...OK?"
+  msg.reply msg.random qareplies
