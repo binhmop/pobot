@@ -10,6 +10,13 @@ module.exports = (robot) ->
 #  else
 #       msg.reply "Find your inner peace and I will tell you."
 
+ robot.respond /(pls|please)/i, (msg) ->
+  if (msg.message.user.name in ['bhan'])
+       msg.reply "Sure will!"
+  else
+       msg.reply "Can you file a Jira ticket for that?"
+
+
 # food 
  foodreplies = [
   "I am starving here",
@@ -33,7 +40,7 @@ module.exports = (robot) ->
  cooltriggers = [
   "awesome",
   "attractive",
-  "(kool|special|cool|incredible|incroyable)"
+  "(excellent|kool|special|cool|incredible|incroyable)"
  ]
 
  coolreplies = [
