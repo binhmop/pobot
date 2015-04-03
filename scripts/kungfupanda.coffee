@@ -3,6 +3,7 @@
 #
 module.exports = (robot) ->
 
+ elite_users = ['bhan', 'ctn']
  robot.respond /(who's|who is) your (boss|master)/i, (msg) ->
   msg.send "A Dragon Warrior doesn't work for anyone."
 #  if (msg.message.user.name in ['bhan'])
@@ -10,9 +11,10 @@ module.exports = (robot) ->
 #  else
 #       msg.reply "Find your inner peace and I will tell you."
 
- robot.respond /(pls|please)/i, (msg) ->
-  if (msg.message.user.name in ['bhan'])
-       msg.reply "Sure will!"
+ agree_replies = ['Roger that', 'Sure will!', 'Ack']
+ robot.respond /(pls|please|can you)/i, (msg) ->
+  if (msg.message.user.name in elite_users)
+       msg.send msg.random agree_replies
   else
        msg.reply "Can you file a Jira ticket for that?"
 
@@ -20,7 +22,8 @@ module.exports = (robot) ->
 # food 
  foodreplies = [
   "I am starving here",
-  "I am running low on sugar"
+  "I am running low on sugar",
+  "I am too hungry to move"
  ]
 
  foodtriggers = [
@@ -32,7 +35,6 @@ module.exports = (robot) ->
 
  regex = new RegExp foodtriggers.join('|'), "i"
 
- special_users= "bhan"
  robot.hear regex, (msg) ->
     msg.send msg.random foodreplies
 
@@ -55,7 +57,7 @@ module.exports = (robot) ->
     text = msg.message.text
     if text.match(/awesome/i) or text.match(/attractive/i)
        msg.send msg.random coolreplies
-    else if (msg.message.user.name in ['bhan'])
+    else if (msg.message.user.name in ['bhan','ctn'])
        msg.send "*OMG* couldn't agree more +1" 
 
  
