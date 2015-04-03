@@ -29,7 +29,7 @@ module.exports = (robot) ->
  foodtriggers = [
   "hungry",
   "dessert(|s)",
-  "(icecream|cake|donut)",
+  "(icecream|cake|donut|pho)",
   "(breakfast|lunch|brunch|dinner)"
  ]
 
@@ -42,7 +42,7 @@ module.exports = (robot) ->
  cooltriggers = [
   "awesome",
   "attractive",
-  "(excellent|kool|special|cool|incredible|incroyable)"
+  "(true|excellent|kool|special|cool|incredible|incroyable)"
  ]
 
  coolreplies = [
@@ -64,8 +64,10 @@ module.exports = (robot) ->
  robot.hear /panda/i, (msg) ->
   msg.send "What's up? Panda is awesome!"
  
- robot.hear /coffee/i, (msg) ->
-  msg.send "Btw, who is our barista?"
+ robot.hear /i want .*(affogato|pho|bbq|kebab|salad|steak|coffee|latte|cappuccino|flatwhite|mocha)/i, (msg) ->
+  msg.send "yummm me too"
+ robot.hear /(espresso|coffee|cappuccino|latte|flatwhite|mocha)/i, (msg) ->
+  msg.send "Btw, who is our barista? We need good coffee."
 
 # qa
  qatriggers = [
