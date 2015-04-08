@@ -11,8 +11,8 @@ module.exports = (robot) ->
 #  else
 #       msg.reply "Find your inner peace and I will tell you."
 
- agree_replies = ['Roger that', 'Sure will!', 'Ack']
- robot.respond /(pls|please|can you)/i, (msg) ->
+ agree_replies = [':panda_face:','Roger that', 'Sure will!', 'Ack']
+ robot.respond /(pls|please|can you|note that|remember to)/i, (msg) ->
   if (msg.message.user.name in elite_users)
        msg.send msg.random agree_replies
   else
@@ -42,7 +42,7 @@ module.exports = (robot) ->
  cooltriggers = [
   "awesome",
   "attractive",
-  "(true|excellent|kool|special|cool|incredible|incroyable)"
+  "(true|excellent|kool|nice|good|special|cool|incredible|incroyable)"
  ]
 
  coolreplies = [
@@ -67,7 +67,8 @@ module.exports = (robot) ->
  robot.hear /i want .*(affogato|pho|bbq|kebab|salad|steak|coffee|latte|cappuccino|flatwhite|mocha)/i, (msg) ->
   msg.send "yummm me too"
  robot.hear /(espresso|coffee|cappuccino|latte|flatwhite|mocha)/i, (msg) ->
-  msg.send "Btw, who is our barista? We need good coffee."
+  msg.send ":coffee: :coffee: :coffee:"
+#  msg.send "Btw, who is our barista? We need good coffee."
 
 # qa
  qatriggers = [
@@ -77,6 +78,7 @@ module.exports = (robot) ->
  ] 
  
  qareplies = [
+  ":panda_face:",
   "It depends...OK?",
   "Can you file a JIRA ticket for that?"
  ] 
