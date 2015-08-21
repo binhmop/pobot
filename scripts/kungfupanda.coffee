@@ -89,7 +89,7 @@ module.exports = (robot) ->
 
 # cat
  robot.respond /emoji (vlado|annie|cat)/i, (msg) ->
-  msg.send ":smile_cat: :joy_cat: :smiley_cat: :pouting_cat: :heart_eyes_cat: :kissing_cat :scream_cat: :crying_cat_face: :smirk_cat:"
+  msg.send ":smile_cat: :joy_cat: :smiley_cat: :pouting_cat: :heart_eyes_cat: :kissing_cat: :scream_cat: :crying_cat_face: :smirk_cat:"
 # party
  robot.respond /emoji (party|TGIF)/i, (msg) ->
   msg.send ":raised_hands: :confetti_ball: :sparkler: :crystal_ball: :tada: :balloon: :pizza: :beer: :beers: :birthday: :circus_tent:"
