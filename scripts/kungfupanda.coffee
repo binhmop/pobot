@@ -64,7 +64,7 @@ module.exports = (robot) ->
  robot.hear /panda/i, (msg) ->
   msg.send "What's up? Panda is awesome!"
  
- robot.hear /i want .*(affogato|pho|bbq|kebab|salad|steak|coffee|latte|cappuccino|flatwhite|mocha)/i, (msg) ->
+ robot.hear /i want .*(affogato|pho|bbq|kebab|salad|steak|coffee|latte|cappuccino|flatwhite|mocha|sushi)/i, (msg) ->
   msg.send "yummm me too"
  robot.hear /(espresso|coffee|cappuccino|latte|flatwhite|mocha)/i, (msg) ->
   msg.send ":coffee: :coffee: :coffee:"
@@ -86,3 +86,10 @@ module.exports = (robot) ->
  robot.respond qa_regex, (msg) -> 
 # robot.respond /(do you )?(think|agree)/i, (msg) ->
   msg.reply msg.random qareplies
+
+# cat
+ robot.respond /emoji (vlado|annie|cat)/i, (msg) ->
+  msg.send ":smile_cat: :joy_cat: :smiley_cat: :pouting_cat: :heart_eyes_cat: :kissing_cat :scream_cat: :crying_cat_face: :smirk_cat:"
+# party
+ robot.respond /emoji (party|TGIF)/i, (msg) ->
+  msg.send ":raised_hands: :confetti_ball: :sparkler: :crystal_ball: :tada: :balloon: :pizza: :beer: :beers: :birthday: :circus_tent:"
